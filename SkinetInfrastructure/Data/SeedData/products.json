@@ -1,0 +1,38 @@
+[
+  {
+    "Id": 1,
+    "Name": "Angular Speedster Board 2000",
+    "Description": "Description",
+    "Price": 200,
+    "PictureUrl": "images/products/sb-ang1.png",
+    "ProductTypeId": 1,
+    "ProductBrandId": 3
+  },
+  {
+    "Id": 2,
+    "Name": "Green Angular Board 3000",
+    "Description": "Description",
+    "Price": 150,
+    "PictureUrl": "images/products/sb-ang2.png",
+    "ProductTypeId": 3,
+    "ProductBrandId": 1
+  },
+  {
+    "Id": 3,
+    "Name": "Core Board Speed Rush 3",
+    "Description": "Description",
+    "Price": 180,
+    "PictureUrl": "images/products/sb-core1.png",
+    "ProductTypeId": 4,
+    "ProductBrandId": 2
+  },
+  {
+    "Id": 4,
+    "Name": "Net Core Super Board",
+    "Description": "Description",
+    "Price": 300,
+    "PictureUrl": "images/products/sb-core2.png",
+    "ProductTypeId": 2,
+    "ProductBrandId": 4
+  }
+]
