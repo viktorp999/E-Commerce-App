@@ -14,5 +14,13 @@
   {
     "Id": 4,
     "Name": "React"
+  },
+  {
+    "Id": 5,
+    "Name": "Typescript"
+  },
+  {
+    "Id": 6,
+    "Name": "Redis"
   }
 ]

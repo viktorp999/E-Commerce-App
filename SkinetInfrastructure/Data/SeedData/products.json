@@ -6,7 +6,7 @@
     "Price": 200,
     "PictureUrl": "images/products/sb-ang1.png",
     "ProductTypeId": 1,
-    "ProductBrandId": 3
+    "ProductBrandId": 1
   },
   {
     "Id": 2,
@@ -14,7 +14,7 @@
     "Description": "Description",
     "Price": 150,
     "PictureUrl": "images/products/sb-ang2.png",
-    "ProductTypeId": 3,
+    "ProductTypeId": 1,
     "ProductBrandId": 1
   },
   {
@@ -23,7 +23,7 @@
     "Description": "Description",
     "Price": 180,
     "PictureUrl": "images/products/sb-core1.png",
-    "ProductTypeId": 4,
+    "ProductTypeId": 1,
     "ProductBrandId": 2
   },
   {
@@ -32,7 +32,133 @@
     "Description": "Description",
     "Price": 300,
     "PictureUrl": "images/products/sb-core2.png",
+    "ProductTypeId": 1,
+    "ProductBrandId": 2
+  },
+  {
+    "Id": 5,
+    "Name": "React Board Super Whizzy Fast",
+    "Description": "Description",
+    "Price": 250,
+    "PictureUrl": "images/products/sb-react1.png",
+    "ProductTypeId": 1,
+    "ProductBrandId": 4
+  },
+  {
+    "Id": 6,
+    "Name": "Typescript Entry Board",
+    "Description": "Description",
+    "Price": 120,
+    "PictureUrl": "images/products/sb-ts1.png",
+    "ProductTypeId": 1,
+    "ProductBrandId": 5
+  },
+  {
+    "Id": 7,
+    "Name": "Core Blue Hat",
+    "Description": "Description",
+    "Price": 10,
+    "PictureUrl": "images/products/hat-core1.png",
+    "ProductTypeId": 2,
+    "ProductBrandId": 2
+  },
+  {
+    "Id": 8,
+    "Name": "Green React Woolen Hat",
+    "Description": "Description",
+    "Price": 8,
+    "PictureUrl": "images/products/hat-react1.png",
     "ProductTypeId": 2,
     "ProductBrandId": 4
+  },
+  {
+    "Id": 9,
+    "Name": "Purple React Woolen Hat",
+    "Description": "Description",
+    "Price": 15,
+    "PictureUrl": "images/products/hat-react2.png",
+    "ProductTypeId": 2,
+    "ProductBrandId": 4
+  },
+  {
+    "Id": 10,
+    "Name": "Blue Code Gloves",
+    "Description": "Description",
+    "Price": 18,
+    "PictureUrl": "images/products/glove-code1.png",
+    "ProductTypeId": 4,
+    "ProductBrandId": 3
+  },
+  {
+    "Id": 11,
+    "Name": "Green Code Gloves",
+    "Description": "Description",
+    "Price": 15,
+    "PictureUrl": "images/products/glove-code2.png",
+    "ProductTypeId": 4,
+    "ProductBrandId": 3
+  },
+  {
+    "Id": 12,
+    "Name": "Purple React Gloves",
+    "Description": "Description",
+    "Price": 16,
+    "PictureUrl": "images/products/glove-react1.png",
+    "ProductTypeId": 4,
+    "ProductBrandId": 4
+  },
+  {
+    "Id": 13,
+    "Name": "Green React Gloves",
+    "Description": "Description",
+    "Price": 14,
+    "PictureUrl": "images/products/glove-react2.png",
+    "ProductTypeId": 4,
+    "ProductBrandId": 4
+  },
+  {
+    "Id": 14,
+    "Name": "Redis Red Boots",
+    "Description": "Description",
+    "Price": 250,
+    "PictureUrl": "images/products/boot-redis1.png",
+    "ProductTypeId": 3,
+    "ProductBrandId": 6
+  },
+  {
+    "Id": 15,
+    "Name": "Core Red Boots",
+    "Description": "Description",
+    "Price": 189.99,
+    "PictureUrl": "images/products/boot-core2.png",
+    "ProductTypeId": 3,
+    "ProductBrandId": 2
+  },
+  {
+    "Id": 16,
+    "Name": "Core Purple Boots",
+    "Description": "Description",
+    "Price": 199.99,
+    "PictureUrl": "images/products/boot-core1.png",
+    "ProductTypeId": 3,
+    "ProductBrandId": 2
+  },
+  {
+    "Id": 17,
+    "Name": "Angular Purple Boots",
+    "Description": "Description",
+    "Price": 150,
+    "PictureUrl": "images/products/boot-ang2.png",
+    "ProductTypeId": 3,
+    "ProductBrandId": 1
+  },
+  {
+    "Id": 18,
+    "Name": "Angular Blue Boots",
+    "Description": "Description",
+    "Price": 180,
+    "PictureUrl": "images/products/boot-ang1.png",
+    "ProductTypeId": 3,
+    "ProductBrandId": 1
   }
 ]
