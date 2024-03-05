@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace SkinetInfrastructure.Data.Migrations
 {
     [DbContext(typeof(StoreContext))]
-    [Migration("20240229002655_Init")]
+    [Migration("20240305225422_Init")]
     partial class Init
     {
         /// <inheritdoc />
