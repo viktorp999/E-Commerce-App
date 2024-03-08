@@ -1,21 +1,16 @@
 using Microsoft.EntityFrameworkCore;
-using SkinetCore.Interfaces;
 using SkinetInfrastructure.Data;
+using SkinetAPI.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-
-builder.Services.AddControllers();
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddDbContext<StoreContext>(opt => opt.UseSqlServer(builder.Configuration.GetConnectionString("SkinetConnection")));
-builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+builder.Services.AddApplicationServices(builder.Configuration);
 
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 
-
+app.UseStaticFiles();
 
 app.UseAuthorization();
 
