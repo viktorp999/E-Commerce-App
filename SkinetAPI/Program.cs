@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using SkinetInfrastructure.Data;
 using SkinetAPI.Extensions;
+using SkinetAPI.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +10,10 @@ builder.Services.AddApplicationServices(builder.Configuration);
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
+
+app.UseMiddleware<MiddlewareException>();
+
+app.UseStatusCodePagesWithReExecute("/errors/{0}");
 
 app.UseStaticFiles();
 

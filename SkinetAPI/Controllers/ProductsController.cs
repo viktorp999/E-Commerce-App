@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using SkinetAPI.DTOs;
+using SkinetAPI.Errors;
 using SkinetCore.Entities;
 using SkinetCore.Interfaces;
 using SkinetCore.Specifications;
@@ -34,6 +35,11 @@ namespace SkinetAPI.Controllers
             var spec = new ProductsWithTypesAndBrandsSpecification(id);
 
             var product = await _unitOfWork.Repository<Product>().GetEntityWithSpec(spec);
+
+            if (product == null)
+            {
+                return NotFound(new ApiResponse(404));
+            }
 
             return _mapper.Map<Product, ProductToReturnDto>(product);
         }
