@@ -9,5 +9,6 @@ namespace SkinetCore.Interfaces
         Task<IReadOnlyList<T>> ListAll();
         Task<T> GetEntityWithSpec(ISpecification<T> spec);
         Task<IReadOnlyList<T>> List(ISpecification<T> spec);
+        Task<int> Count(ISpecification<T> spec);
     }
 }
