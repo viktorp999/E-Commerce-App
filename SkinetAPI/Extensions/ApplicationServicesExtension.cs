@@ -11,6 +11,13 @@ namespace SkinetAPI.Extensions
         public static IServiceCollection AddApplicationServices(this IServiceCollection services, IConfiguration config)
         {
             services.AddControllers();
+            services.AddCors(opt =>
+            {
+                opt.AddPolicy("CorsPolicy", policy =>
+                {
+                    policy.AllowAnyHeader().AllowAnyMethod().WithOrigins("http://localhost:4200");
+                });
+            });
             services.AddEndpointsApiExplorer();
             services.AddDbContext<StoreContext>(opt => opt.UseSqlServer(config.GetConnectionString("SkinetConnection")));
             services.AddScoped<IUnitOfWork, UnitOfWork>();
