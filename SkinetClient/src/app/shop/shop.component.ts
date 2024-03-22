@@ -26,12 +26,12 @@ export class ShopComponent implements OnInit {
   constructor(private shopService: ShopService) {}
 
   ngOnInit(): void {
-    this.getProducts();
-    this.getBrands();
-    this.getTypes();
+    this.loadProducts();
+    this.loadBrands();
+    this.loadTypes();
   }
 
-  getProducts() {
+  loadProducts() {
     this.shopService.getProducts(this.shopParams).subscribe({
       next: (response) => {
         this.products = response.data;
@@ -43,14 +43,14 @@ export class ShopComponent implements OnInit {
     });
   }
 
-  getBrands() {
+  loadBrands() {
     this.shopService.getBrands().subscribe({
       next: (response) => (this.brands = [{ id: 0, name: 'All' }, ...response]),
       error: (error) => console.log(error),
     });
   }
 
-  getTypes() {
+  loadTypes() {
     this.shopService.getTypes().subscribe({
       next: (response) => (this.types = [{ id: 0, name: 'All' }, ...response]),
       error: (error) => console.log(error),
@@ -60,31 +60,31 @@ export class ShopComponent implements OnInit {
   onBrandSelected(brandId: number) {
     this.shopParams.bandId = brandId;
     this.shopParams.pageNumber = 1;
-    this.getProducts();
+    this.loadProducts();
   }
 
   onTypeSelected(typeId: number) {
     this.shopParams.typeId = typeId;
     this.shopParams.pageNumber = 1;
-    this.getProducts();
+    this.loadProducts();
   }
 
   onSortSelected(event: any) {
     this.shopParams.sort = event.target.value;
-    this.getProducts();
+    this.loadProducts();
   }
 
   onPageChanged(event: any) {
     if (this.shopParams.pageNumber !== event) {
       this.shopParams.pageNumber = event;
-      this.getProducts();
+      this.loadProducts();
     }
   }
 
   onSearch() {
     this.shopParams.search = this.searchTerm?.nativeElement.value;
     this.shopParams.pageNumber = 1;
-    this.getProducts();
+    this.loadProducts();
   }
 
   onReset() {
@@ -93,6 +93,6 @@ export class ShopComponent implements OnInit {
     }
 
     this.shopParams = new ShopParams();
-    this.getProducts();
+    this.loadProducts();
   }
 }
