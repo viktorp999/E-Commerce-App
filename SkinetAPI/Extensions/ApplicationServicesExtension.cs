@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using SkinetAPI.Errors;
 using SkinetCore.Interfaces;
 using SkinetInfrastructure.Data;
+using StackExchange.Redis;
 
 namespace SkinetAPI.Extensions
 {
@@ -17,6 +18,12 @@ namespace SkinetAPI.Extensions
                 {
                     policy.AllowAnyHeader().AllowAnyMethod().WithOrigins("https://localhost:4200");
                 });
+            });
+            services.AddSingleton<IConnectionMultiplexer>(c =>
+            {
+                var options = ConfigurationOptions.Parse(config.GetConnectionString("Redis"));
+
+                return ConnectionMultiplexer.Connect(options);
             });
             services.AddEndpointsApiExplorer();
             services.AddDbContext<StoreContext>(opt => opt.UseSqlServer(config.GetConnectionString("SkinetConnection")));
