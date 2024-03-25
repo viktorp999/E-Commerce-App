@@ -1,0 +1,40 @@
+﻿using SkinetCore.Entities;
+using SkinetCore.Interfaces;
+using StackExchange.Redis;
+using System.Text.Json;
+
+namespace SkinetInfrastructure.Data
+{
+    public class BasketRepository : IBasketRepository
+    {
+        private readonly IDatabase _database;
+        public BasketRepository(IConnectionMultiplexer redis)
+        {
+            _database = redis.GetDatabase();
+        }
+
+        public async Task<bool> DeleteBasket(string baskedId)
+        {
+            return await _database.KeyDeleteAsync(baskedId);
+        }
+
+        public async Task<CustomerBasket> GetBasket(string basketId)
+        {
+            var data = await _database.StringGetAsync(basketId);
+
+            return data.IsNullOrEmpty ? null : JsonSerializer.Deserialize<CustomerBasket>(data);
+        }
+
+        public async Task<CustomerBasket> UpdateBasket(CustomerBasket basket)
+        {
+            var created = await _database.StringSetAsync(basket.Id, JsonSerializer.Serialize(basket), TimeSpan.FromDays(30));
+
+            if (!created)
+            {
+                return null;
+            }
+
+            return await GetBasket(basket.Id);
+        }
+    }
+}
